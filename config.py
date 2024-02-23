@@ -4,7 +4,9 @@ import os
 OPENAI_API_KEY = ''
 
 os.environ["OPENAI_API_KEY"] = ''
-os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8e8640ee190fde50328431e/open-ai/openai'
+os.environ["OPENAI_API_BASE"] = ''
+os.environ["SERPAPI_API_KEY"] = ''
+
 
 EMBEDDING_MODEL = ["text-embedding-3-small"]
 

@@ -12,4 +12,9 @@ nltk
 pymilvus
 pymupdf==1.23.25
 faiss-cpu==1.7.4
-oss2
+oss2 # aliyun oss
+
+# serpapi
+google-search-results==2.4.2
+numexpr==2.8.6
+arxiv==2.1.0
