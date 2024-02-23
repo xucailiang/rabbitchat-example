@@ -122,7 +122,6 @@ def uploaded_files(uploaded_file, openai_api_key, embedding_model):
                 if UPLOAD_OSS:
                     result = bucket.put_object_from_file(uploaded_file_name, file_tmp_path, headers={"Content-Disposition": "attachment"})
                     logger.info(f"文件{uploaded_file_name}上传成功!Etag:{result.etag},request_id:{result.request_id}")
-                print(embedding_model+ ">"+ openai_api_key)
                 embeddings = OpenAIEmbeddings(model=embedding_model, openai_api_key=openai_api_key)
                 docs = PyMuPDFLoader(file_tmp_path).load()
                 text_splitter = RecursiveCharacterTextSplitter()
