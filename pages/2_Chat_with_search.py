@@ -13,7 +13,7 @@ with st.sidebar:
     serpapi_api_key = st.text_input("Serp API Key", key="serpapi_api_key", type="password")
 
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat)"
+    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat-example)"
 
 st.title("🔎 LangChain - Chat with search")
 
