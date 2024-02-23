@@ -12,3 +12,4 @@ nltk
 pymilvus
 pymupdf==1.23.25
 faiss-cpu==1.7.4
+oss2
