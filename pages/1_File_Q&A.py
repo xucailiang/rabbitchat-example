@@ -62,7 +62,7 @@ with st.sidebar:
     openai_api_key = st.text_input("Openai API Key", key="openai_api_key", type="password")
     openai_model = st.selectbox("请选择所需llm模型", ["gpt-4"], 0, key="openai_model")
     embedding_model = st.selectbox("请选择所需embedding模型", EMBEDDING_MODEL, 0, key="embedding_model")
-    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat)"
+    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat-example)"
 
 
 st.title("📝 File Q&A with Anthropic")

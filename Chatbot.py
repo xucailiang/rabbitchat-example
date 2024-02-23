@@ -4,8 +4,7 @@ import streamlit as st
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     openai_model = st.selectbox("请选择所需模型", ["gpt-3.5-turbo", "gpt-4"], 1, key="openai_model")
-    "[Get an OpenAI API key](https://github.com/xucailiang/rabbitchat)"
-    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat)"
+    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat-example)"
 
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
