@@ -23,13 +23,7 @@ streamlit run Chatbot.py # 启动
 
 没事，本项目集成llm+Langchain+streamlit+向量数据库，用最简单的方式打通学习的大门。
 
-此外本项目支持将文件上传至阿里云oss，仅需在config里填写对应配置即可。
-
 前端框架：[https://streamlit.io/](https://streamlit.io/)
-
-阿里云oss：[https://cn.aliyun.com/](https://cn.aliyun.com/)
-
-llm应用框架：[https://github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain)
 
 在线向量数据库：[https://cloud.zilliz.com/orgs](https://cloud.zilliz.com/orgs)
 
