@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 
 from langchain.agents import initialize_agent, AgentType
@@ -5,6 +7,8 @@ from langchain.callbacks import StreamlitCallbackHandler
 from langchain.chat_models import ChatOpenAI
 from langchain.tools import DuckDuckGoSearchRun
 from langchain.agents import load_tools
+
+os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8e8640ee190fde50328431e/open-ai/openai'
 
 with st.sidebar:
     openai_api_key = st.text_input(

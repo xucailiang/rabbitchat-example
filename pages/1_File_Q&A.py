@@ -11,7 +11,8 @@ from langchain_openai import OpenAIEmbeddings
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.documents import Document
+
+os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8e8640ee190fde50328431e/open-ai/openai'
 
 import config
 
@@ -27,11 +28,8 @@ if UPLOAD_OSS:
     auth = oss2.Auth(access_key_id, access_key_secret)
     bucket = oss2.Bucket(auth, config.ENDPOINT, config.BUCKET_NAME)
 
-MAX_FILE_SIZE_BYTES = 2 * 1024 * 1024  # 2MB
+MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024  # 2MB
 
-upload_file_status = st.session_state.get("uploaded_file", "")
-
-vector = ""
 
 prompt = ChatPromptTemplate.from_template("""
                       请用中文回答。
@@ -66,7 +64,9 @@ with st.sidebar:
 
 
 st.title("📝 File Q&A with Anthropic")
-uploaded_file = st.file_uploader("Upload an article", type=("pdf"), on_change=on_change, key="uploaded_file")
+
+uploaded_file = st.file_uploader("Upload an article", type=("pdf"), on_change=on_change, key="uploaded_file", disabled = not openai_api_key)
+
 question = st.chat_input(
     "请输入对话内容，换行请使用Shift+Enter",
     on_submit=on_submit,
@@ -128,6 +128,7 @@ def uploaded_files(uploaded_file, openai_api_key, embedding_model):
                 documents = text_splitter.split_documents(docs)
                 vector = FAISS.from_documents(documents, embeddings)
                 st.session_state['vector'] = vector
+                st.session_state.pop("uploaded_file")
         finally:
             os.remove(file_tmp_path)
             logger.info(f"文件删除完成")
