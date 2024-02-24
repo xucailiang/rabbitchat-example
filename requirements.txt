@@ -1,5 +1,5 @@
 streamlit>=1.28
-langchain==0.1.1
+langchain==0.1.6
 openai>=1.2
 duckduckgo-search
 anthropic>=0.3.0
@@ -12,9 +12,11 @@ nltk
 pymilvus
 pymupdf==1.23.25
 faiss-cpu==1.7.4
-oss2 # aliyun oss
 
-# serpapi
+#aliyun oss
+oss2
+
+#serpapi
 google-search-results==2.4.2
 numexpr==2.8.6
 arxiv==2.1.0
