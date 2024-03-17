@@ -9,6 +9,7 @@ os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8
 
 
 EMBEDDING_MODEL = ["text-embedding-3-small"]
+# EMBEDDING_MODEL = ["text-embedding-3-small", "BAAI/bge-small-zh-v1.5"]
 
 COLLECTION_NAME = "rabbitchat"
 
@@ -27,6 +28,9 @@ BUCKET_NAME = 'rabbitchat-bucket-shenzhen'
 UPLOAD_OSS = False
 
 
+# openai.proxy = {
+#     "http": "{proxy_ip}:{port}"
+# }
 
 
 
