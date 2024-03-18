@@ -11,7 +11,8 @@ openai>=1.2
 #llama-index-vector-stores-chroma
 
 sentence_transformers==2.5.1
-
+google-generativeai==0.4.1
+langchain-google-genai==0.0.11
 duckduckgo-search
 anthropic>=0.3.0
 trubrics>=1.4.3

@@ -84,6 +84,9 @@ with st.sidebar:
 
 st.title("📝 File Q&A with Anthropic")
 
+# 清除旧的对话记录
+st.button("清除对话记录", on_click=lambda: st.session_state.pop("messages", None))
+
 uploaded_file = st.file_uploader("Upload an article", type=("pdf"), on_change=on_change, key="uploaded_file", disabled=not openai_api_key)
 
 question = st.chat_input(

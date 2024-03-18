@@ -8,6 +8,10 @@ with st.sidebar:
 
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by OpenAI LLM")
+
+# 清除旧的对话记录
+st.button("清除对话记录", on_click=lambda: st.session_state.pop("messages", None))
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
@@ -22,7 +26,8 @@ if prompt := st.chat_input():
     client = OpenAI(api_key=openai_api_key)
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
-    response = client.chat.completions.create(model=openai_model, messages=st.session_state.messages)
-    msg = response.choices[0].message.content
+    with st.spinner("加载中..."):
+        response = client.chat.completions.create(model=openai_model, messages=st.session_state.messages)
+        msg = response.choices[0].message.content
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
