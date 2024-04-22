@@ -1,6 +1,6 @@
 ![RabbitChatv2.png](https://cdn.nlark.com/yuque/0/2024/png/33530968/1708586265466-792e6e49-76bd-48fe-a353-56151cb56158.png#averageHue=%23fefefe&clientId=ubdd0a957-4a4a-4&from=paste&height=236&id=ubcda15e2&originHeight=236&originWidth=890&originalType=binary&ratio=1&rotation=0&showTitle=false&size=38444&status=done&style=shadow&taskId=u34dc6ee6-5be0-4669-8cd0-5091f530369&title=&width=890)
 
-在线体验地址：https://ftzwc2q2xo3p6ap9dg679k.streamlit.app/
+在线体验地址：[https://ftzwc2q2xo3p6ap9dg679k.streamlit.app/](https://rabbit-chat.streamlit.app/)
 
 欢迎来到最最最最简洁版的大模型对话/文件问答项目，以下是启动方式：
 
