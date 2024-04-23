@@ -1,11 +1,16 @@
+import os
 
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 
-GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
-SECRETS_KEY_LIST = st.secrets["SECRETS_KEY_LIST"]
+try:
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+    SECRETS_KEY_LIST = st.secrets["SECRETS_KEY_LIST"]
+except:
+    GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
+    SECRETS_KEY_LIST = os.environ.get('SECRETS_KEY_LIST')
 
 common_languages = [
     "中文", "英语", "西班牙语", "印地语", "阿拉伯语",
@@ -51,7 +56,7 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
     model = ChatGoogleGenerativeAI(model="gemini-pro",
                                    temperature=0.2, google_api_key=GOOGLE_API_KEY, streaming=True)
-    with st.spinner("加载中..."):
+    with st.spinner("生成AI回答中..."):
         chain = default_prompt | model | StrOutputParser()
         response = chain.invoke({"target_language": target_language, "input": prompt, "human_input_prompt": human_input_prompt})
     # st.success("完成！")

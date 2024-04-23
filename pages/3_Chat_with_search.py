@@ -21,6 +21,9 @@ with st.sidebar:
 
 st.title("🔎 LangChain - Chat with search")
 
+# 清除旧的对话记录
+st.button("清除对话记录", on_click=lambda: st.session_state.pop("messages", None))
+
 """
 需要使用在线搜索+大模型的检索对话？ 🤝here we are!🤝 
 

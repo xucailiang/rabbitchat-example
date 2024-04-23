@@ -27,6 +27,8 @@ BUCKET_NAME = 'rabbitchat-bucket-shenzhen'
 
 UPLOAD_OSS = False
 
+ONE_API_BASE_URL = "http://106.53.130.14:3000"
+
 
 # openai.proxy = {
 #     "http": "{proxy_ip}:{port}"

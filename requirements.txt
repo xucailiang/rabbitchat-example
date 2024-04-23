@@ -10,7 +10,7 @@ openai>=1.2
 #llama-index-embeddings-huggingface
 #llama-index-vector-stores-chroma
 
-sentence_transformers==2.5.1
+#sentence_transformers==2.5.1
 google-generativeai==0.4.1
 langchain-google-genai==0.0.11
 duckduckgo-search
@@ -21,7 +21,7 @@ streamlit-feedback
 pypdfium2
 pypdf
 nltk
-pymilvus
+#pymilvus
 pymupdf==1.23.25
 faiss-cpu==1.7.4
 #chromadb
