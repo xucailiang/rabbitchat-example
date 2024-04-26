@@ -8,7 +8,10 @@ from langchain.chat_models import ChatOpenAI
 from langchain.tools import DuckDuckGoSearchRun
 from langchain.agents import load_tools
 
-os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8e8640ee190fde50328431e/open-ai/openai'
+import config
+
+os.environ["OPENAI_API_BASE"] = config.ONE_API_BASE_URL
+# os.environ["OPENAI_API_BASE"] = 'https://gateway.ai.cloudflare.com/v1/92a11adae8e8640ee190fde50328431e/openai/openai'
 
 with st.sidebar:
     openai_api_key = st.text_input(
@@ -16,8 +19,6 @@ with st.sidebar:
     )
     serpapi_api_key = st.text_input("Serp API Key", key="serpapi_api_key", type="password")
 
-    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[![Open with GitHub](https://github.com/codespaces/badge.svg)](https://github.com/xucailiang/rabbitchat-example)"
 
 st.title("🔎 LangChain - Chat with search")
 

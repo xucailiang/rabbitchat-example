@@ -27,8 +27,9 @@ faiss-cpu==1.7.4
 #chromadb
 #aliyun oss
 oss2
-#pytorch==2.2.1
+python-dotenv
 #serpapi
 google-search-results==2.4.2
 numexpr==2.8.6
 arxiv==2.1.0
+zhipuai==2.0.1.20240423
